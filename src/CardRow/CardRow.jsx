@@ -3,12 +3,14 @@ import Card from "../Card/Card";
 
 export const CardRow = (props) => {
   const { pokemonData } = props;
-  
+    
   return (
     <>
     {console.log("pokemon, ", pokemonData)}
-    <div>POKEMON NAME:</div>
-      <Card />
+    {pokemonData.map((pokemon)=> {
+        console.log("single pokemon?", pokemon)
+    })}
+      <Card pokemonData={pokemonData[0]}/>
     </>
   );
 };

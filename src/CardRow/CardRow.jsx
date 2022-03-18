@@ -7,10 +7,9 @@ export const CardRow = (props) => {
   return (
     <>
     {console.log("pokemon, ", pokemonData)}
-    {pokemonData.map((pokemon)=> {
-        console.log("single pokemon?", pokemon)
-    })}
-      <Card pokemonData={pokemonData[0]}/>
+    {pokemonData.map((pokemon,index) => 
+      <Card id={pokemon.id} name={pokemon.name} type={pokemon.types[0].type.name} image={pokemon.sprites.front_default} key={index}/>
+    )}
     </>
   );
 };

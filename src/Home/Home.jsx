@@ -1,23 +1,30 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React from "react";
+import { useEffect, useState } from "react";
+import CardRow from "../CardRow/CardRow";
 
 const Home = () => {
-    let pokemon;
-    const pokemonSearch = async () => {
-        const url = `https://pokeapi.co/api/v2/pokemon/1`;
-        const response = await fetch(url);
-      
-        pokemon = await response.json();
-        console.log("pokemon", pokemon);
-    }
+  const [pokemonData, setPokemonData] = useState("");
 
-    useEffect(() => {
-        pokemonSearch();
-    });
+  const pokemonSearch = async () => {
+    const pokemon=[];
+      for(let i = 1; i<= 20; i++) {
+          const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+          const response = await fetch(url);
+          pokemon.push(await response.json());   
+      }
+    setPokemonData(pokemon);
+  };
 
-    return (
-        <div>THIS IS HOME PAGE</div>
-    )
-}
+  useEffect(() => {
+    pokemonSearch();
+  },[]);
+
+  return (
+    <>
+      <div> THIS IS HOMEPAGE</div>
+      <CardRow pokemonData={pokemonData} />
+    </>
+  );
+};
 
 export default Home;

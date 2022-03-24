@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import CardRow from "../CardRow/CardRow";
+import Header from "../Header/Header";
 
 const Home = () => {
   const [pokemonData, setPokemonData] = useState("");
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <div> THIS IS HOMEPAGE</div>
       {searchComplete && <CardRow pokemonData={pokemonData} />}
     </>

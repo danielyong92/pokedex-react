@@ -4,20 +4,6 @@ import Grid from "@mui/material/Grid";
 
 export const Card = props => {
   const { id, name, image, type, index, handleLikeClick } = props;
-  // const [ favorites, setFavorites ] = useState([]);
-  // const [ onClick, setOnClick ] = useState(false);
-
-  // const oldArray =[];
-
-  // const handleClick = () => {
-  //   console.log("in handle click");
-  //   setOnClick(true);
-  // }
-  
-  // useEffect(() => {
-  //   setFavorites(favorites => [...favorites,props]);
-  //   console.log("state of favorite", favorites);
-  // }, [onClick]);
 
   return (
     <>

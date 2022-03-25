@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import CardRow from "../CardRow/CardRow";
 import Header from "../Header/Header";
 
-const Home = () => {
+const Home = (props) => {
+  const { handleFavorites } = props;
   const [pokemonData, setPokemonData] = useState("");
   const [searchComplete, setSearchComplete] = useState(false);
-  const [favorites, setFavorites] = useState([]);
 
   const pokemonSearch = async () => {
     const pokemon = [];
@@ -22,18 +22,9 @@ const Home = () => {
   useEffect(() => {
     pokemonSearch();
   }, []);
- 
-  const handleFavorites = (props) => {
-    setFavorites([...favorites, props]);
-  }
-
-  useEffect(()=> {
-    console.log("favorites", favorites)
-  },[favorites])
 
   return (
     <>
-      <Header />
       <div> THIS IS HOMEPAGE</div>
       {searchComplete && <CardRow pokemonData={pokemonData} handleLikeClick={handleFavorites}/>}
     </>

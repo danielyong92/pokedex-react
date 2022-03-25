@@ -1,0 +1,12 @@
+.wrapper {
+    background: Red;
+    padding: 1rem;
+}
+
+.nav {
+    display:flex;
+}
+
+.ul {
+    margin-left:3rem;
+}

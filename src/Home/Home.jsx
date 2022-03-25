@@ -10,7 +10,7 @@ const Home = (props) => {
 
   const pokemonSearch = async () => {
     const pokemon = [];
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 15; i++) {
       const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
       const response = await fetch(url);
       pokemon.push(await response.json());
@@ -25,8 +25,8 @@ const Home = (props) => {
 
   return (
     <>
-      <div> THIS IS HOMEPAGE</div>
       {searchComplete && <CardRow pokemonData={pokemonData} handleLikeClick={handleFavorites}/>}
+      <button>Load more!</button>
     </>
   );
 };

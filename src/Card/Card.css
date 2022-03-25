@@ -1,0 +1,14 @@
+.cardContainer {
+    display: flex;
+    border: 1px solid black;
+    align-content: center;
+}
+
+#image {
+    width:10rem;
+    height:10rem;
+}
+
+.pokemon-stats {
+    
+}

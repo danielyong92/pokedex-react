@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 const Home = () => {
   const [pokemonData, setPokemonData] = useState("");
   const [searchComplete, setSearchComplete] = useState(false);
+  const [favorites, setFavorites] = useState("");
 
   const pokemonSearch = async () => {
     const pokemon = [];
@@ -21,12 +22,16 @@ const Home = () => {
   useEffect(() => {
     pokemonSearch();
   }, []);
+ 
+  const handleClick = () => {
+    setFavorites()
+  }
 
   return (
     <>
       <Header />
       <div> THIS IS HOMEPAGE</div>
-      {searchComplete && <CardRow pokemonData={pokemonData} />}
+      {searchComplete && <CardRow pokemonData={pokemonData} handleClick={()=>handleClick()}/>}
     </>
   );
 };

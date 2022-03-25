@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import Grid from "@mui/material/Grid";
 
 export const CardRow = props => {
-  const { pokemonData, handleClick } = props;
+  const { pokemonData, handleLikeClick } = props;
 
   return (
     <>
@@ -18,7 +18,7 @@ export const CardRow = props => {
                 type={pokemon.types[0].type.name}
                 image={pokemon.sprites.other.dream_world.front_default}
                 key={index}
-                handleClick={handleClick}
+                handleLikeClick={handleLikeClick}
               />
             </Grid>
           ))}

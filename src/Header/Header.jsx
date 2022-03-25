@@ -10,7 +10,7 @@ export const Header = () => {
             <Link href="#">Homepage</Link>
           </li>
           <li>
-            <Link href="#">Favorite Gallery</Link>
+            <Link href="/favorite">Favorite Gallery</Link>
           </li>
         </ul>
       </div>

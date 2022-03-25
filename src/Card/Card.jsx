@@ -3,7 +3,7 @@ import "./Card.css";
 import Grid from "@mui/material/Grid";
 
 export const Card = props => {
-  const { id, name, image, type, index, handleClick } = props;
+  const { id, name, image, type, index, handleLikeClick } = props;
   // const [ favorites, setFavorites ] = useState([]);
   // const [ onClick, setOnClick ] = useState(false);
 
@@ -34,7 +34,7 @@ export const Card = props => {
         </div>
         <Grid item md={3}>
           <button >DISLIKE</button>
-          <button onClick={handleClick}>LIKE</button>
+          <button onClick={()=>handleLikeClick(props)}>LIKE</button>
         </Grid>
       </Grid>
     </>

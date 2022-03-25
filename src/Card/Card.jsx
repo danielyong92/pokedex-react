@@ -1,14 +1,15 @@
-import { React, useState, useEffect } from "react";
+import { React, useContext } from "react";
 import "./Card.css";
 import Grid from "@mui/material/Grid";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export const Card = props => {
-  const { id, name, image, type, handleLikeClick } = props;
+  const { id, name, image, type, handleLikeClick, removeFavorite } = props;
 
   return (
     <>
+      {!removeFavorite && (
       <Grid item md={4}>
         <div className="card-container">
           <Grid item>
@@ -33,6 +34,8 @@ export const Card = props => {
           </div>
         </div>
       </Grid>
+      )
+      }
     </>
   );
 };

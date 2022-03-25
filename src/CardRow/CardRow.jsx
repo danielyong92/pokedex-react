@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../Card/Card";
 import Grid from "@mui/material/Grid";
 
 export const CardRow = props => {
-  const { pokemonData, handleLikeClick } = props;
-
+  const { pokemonData, handleLikeClick, removeFavorite } = props;
   return (
     <>
       {console.log("pokemon, ", pokemonData)}
@@ -18,9 +17,11 @@ export const CardRow = props => {
               image={pokemon.sprites.other.dream_world.front_default}
               key={index}
               handleLikeClick={handleLikeClick}
+              removeFavorite={removeFavorite}
             />
           ))}
         </Grid>
+        }
       </div>
     </>
   );

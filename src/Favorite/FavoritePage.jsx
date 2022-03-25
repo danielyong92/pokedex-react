@@ -5,9 +5,7 @@ import { pokemonContexts } from '../Context/PokemonContext';
 
 export const FavoritePage = ({data}) => {
   // const { favorites } = props;
-  const {favorites} = useContext(pokemonContexts);
-  console.log("favorites before return", favorites)
-  console.log("data", data)
+  const { favorites } = useContext(pokemonContexts);
   return (
     <>
       <div>THIS IS FAVORITE PAGE!!</div>
@@ -18,9 +16,9 @@ export const FavoritePage = ({data}) => {
             <Card
               id={pokemon.id}
               name={pokemon.name}
-              type={pokemon.types[0].type.name}
-              image={pokemon.sprites.other.dream_world.front_default}
-              key={pokemon.id}
+              type={pokemon.type}
+              image={pokemon.image}
+              key={index}
             />
           </Grid>
         ))}

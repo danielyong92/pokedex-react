@@ -1,5 +1,5 @@
 import React from "react";
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom'
 import "./Header.css";
 
 export const Header = () => {
@@ -9,10 +9,10 @@ export const Header = () => {
         <h3> POKEDEX GALLERIA</h3>
         <ul className="nav">
           <li className="ul">
-            <Link href="/">Homepage</Link>
+            <Link to="/">Homepage</Link>
           </li>
           <li className="ul">
-            <Link href="/favorite">Favorite Gallery</Link>
+            <Link to="/favorite">Favorite Gallery</Link>
           </li>
         </ul>
       </div>

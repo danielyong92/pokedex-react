@@ -1,10 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import CardRow from "../CardRow/CardRow";
-import Header from "../Header/Header";
 
 const Home = (props) => {
-  const { handleFavorites } = props;
+  const { handleFavorites, removeFavorite } = props;
   const [pokemonData, setPokemonData] = useState("");
   const [searchComplete, setSearchComplete] = useState(false);
 
@@ -25,7 +24,7 @@ const Home = (props) => {
 
   return (
     <>
-      {searchComplete && <CardRow pokemonData={pokemonData} handleLikeClick={handleFavorites}/>}
+      {searchComplete && <CardRow pokemonData={pokemonData} handleLikeClick={handleFavorites} removeFavorite={removeFavorite}/>}
       <button>Load more!</button>
     </>
   );

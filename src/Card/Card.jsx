@@ -9,7 +9,7 @@ export const Card = props => {
 
   return (
     <>
-      {!removeFavorite && (
+      {(
       <Grid item md={4}>
         <div className="card-container">
           <Grid item>
